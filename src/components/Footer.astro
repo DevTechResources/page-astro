@@ -1,0 +1,37 @@
+---
+const platform = "github";
+const username = "withastro";
+---
+
+<footer class="footer">
+    <p class="footer-text">
+        Descubre más sobre mi proyecto en 
+        <a href={`https://www.${platform}.com/${username}`} class="footer-link">
+            {platform}
+        </a>!
+    </p>
+</footer>
+
+<style>
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #4a77f6;
+        border-top: 1px solid #eaeaea;
+        width: 100%;
+    }
+
+    .footer-text {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .footer-link {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .footer-link:hover {
+        text-decoration: underline;
+    }
+</style>
