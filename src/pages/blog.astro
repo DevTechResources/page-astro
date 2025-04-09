@@ -1,4 +1,10 @@
 ---
+import BlogPost from '../components/BlogPost.astro';
+import Footer from '../components/Footer.astro';
+import Hamburger from '../components/Hamburger.astro';
+import Navigation1 from '../components/Navigation1.astro';
+import '../Style/global.css';
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 
 ---
 
@@ -22,17 +28,16 @@
 		</style>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Navigation1/>
+		<Hamburger/>
       
         <h1>My Astro Site</h1>
         <h1>Mi pagina de Leer de astro</h1>
         <p>This is where I will post about my journey learning Astro.</p>
         <ul>
-            <li><a href="/posts/post-1/">Post 1</a></li>
-            <li><a href="/posts/post-2/">Post 2</a></li>
-            <li><a href="/posts/post-3/">Post 3</a></li>
+			{allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
         </ul>
+
+		<Footer/>
 	</body>
 </html>

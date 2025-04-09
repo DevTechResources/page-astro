@@ -1,36 +1,11 @@
 ---
+import '../Style/global.css';
 ---
 
-<div class="nav">
+<div class="nav-links">
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
+    <a href="/tags/">Tags</a>
 </div>
 
-
-<style>
-    .nav {
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.nav a:hover {
-    background-color: #575757;
-    color: #ffcc00; 
-}
-
-.nav a.active {
-    font-weight: bold;
-    border-bottom: 2px solid #ffcc00; 
-}
-
-</style>

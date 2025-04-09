@@ -1,38 +1,7 @@
 ---
-import Footer from "../components/Footer.astro";
-import Navigation1 from "../components/Navigation1.astro";
-
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Home Page";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-		<style>
-			img{
-				width: 100%;
-				display: block;
-				height: 100vh;
-
-			}
-			.blur-load{
-				background-size: cover ;
-			}
-		</style>
-	</head>
-	<body>
-        <Navigation1/>
-		<h1>Astro</h1>
-		<h1>My proyect in Astro</h1>
-		<div class="blur-load" style="background-image: url(asset/img/img2.jpg);">
-			<img src="asset/img/img3.jpg" alt="logo" loading="lazy" >
-		</div>
-
-		<Footer/>
-
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+</BaseLayout>

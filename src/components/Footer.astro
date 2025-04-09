@@ -1,37 +1,20 @@
 ---
-const platform = "github";
-const username = "withastro";
+import Social from "./Social.astro";
+
+
 ---
 
-<footer class="footer">
-    <p class="footer-text">
-        Descubre más sobre mi proyecto en 
-        <a href={`https://www.${platform}.com/${username}`} class="footer-link">
-            {platform}
-        </a>!
-    </p>
+<footer>
+        <Social platform="twitter" username="astrodotbuild" />
+        <Social platform="github" username="withastro" />
+        <Social platform="youtube" username="astrodotbuild" />
 </footer>
 
 <style>
-    .footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #4a77f6;
-        border-top: 1px solid #eaeaea;
-        width: 100%;
+    footer {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      align-items: center;
     }
-
-    .footer-text {
-        font-size: 16px;
-        color: #333;
-    }
-
-    .footer-link {
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-    .footer-link:hover {
-        text-decoration: underline;
-    }
-</style>
+  </style>
