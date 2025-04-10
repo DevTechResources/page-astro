@@ -28,38 +28,35 @@ const { pageTitle } = Astro.props;
 
 		<div class="container">
 			<div class="slider">
+		
+			  <input type="radio" name="slider" id="slideOne" checked>
+			  <input type="radio" name="slider" id="slideTwo">
+			  <input type="radio" name="slider" id="slideThree">
+		
+			  <div class="nav-arrows">
+				<label for="slideThree" class="prev slideOne"></label>
+				<label for="slideOne" class="prev slideTwo"></label>
+				<label for="slideTwo" class="prev slideThree"></label>
 
-				<input type="radio" name="slider" id="slideOne" checked>
-				<input type="radio" name="slider" id="slideTwo">
-				<input type="radio" name="slider" id="slideThree">
-	
-
-				<div class="nav-arrows">
-					<label for="slideThree" class="prev slideOne"></label>
-					<label for="slideOne" class="prev slideTwo"></label>
-					<label for="slideTwo" class="prev slideThree"></label>
-	
-					<label for="slideTwo" class="next slideOne"></label>
-					<label for="slideThree" class="next slideTwo"></label>
-					<label for="slideOne" class="next slideThree"></label>
-				</div>
-	
-
-				<div class="buttons">
-					<label for="slideOne"></label>
-					<label for="slideTwo"></label>
-					<label for="slideThree"></label>
-				</div>
-	
-
-				<div class="content">
-					<div class="firstslider"></div>
-					<div class="secondslider"></div>
-					<div class="thridslider"></div>
-				</div>
+				<label for="slideTwo" class="next slideOne"></label>
+				<label for="slideThree" class="next slideTwo"></label>
+				<label for="slideOne" class="next slideThree"></label>
+			  </div>
+		
+			  <div class="buttons">
+				<label for="slideOne"></label>
+				<label for="slideTwo"></label>
+				<label for="slideThree"></label>
+			  </div>
+		
+			  <div class="content">
+				<div class="firstslider"></div>
+				<div class="secondslider"></div>
+				<div class="thridslider"></div>
+			  </div>
+		
 			</div>
-		</div>
-
+		  </div>
 		<Footer />
 
 		<script>

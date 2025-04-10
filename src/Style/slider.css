@@ -1,138 +1,154 @@
-.container{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-}
 
-.slider input{
-    visibility: hidden;
-    display: none;
-}
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+    }
 
-.buttons{
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    bottom: 50px;
-    gap: 10px;
+    .slider input {
+      visibility: hidden;
+      display: none;
+    }
 
-}
+    .buttons {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      bottom: 50px;
+      gap: 10px;
+      z-index: 3;
+    }
 
-.buttons label{
-    width: 20px;
-    height: 20px;
-    background-color: antiquewhite;
-    opacity: 0.5;
-    cursor: pointer;
-    z-index: 1;
-    transition: 300ms ease-in-out;
-    border-radius: 100%;
-}
+    .buttons label {
+      width: 20px;
+      height: 20px;
+      background-color: antiquewhite;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+      border-radius: 100%;
+    }
 
-.buttons label:hover{
-    scale: 1.2;
-    opacity: 1;
-}
+    .buttons label:hover {
+      scale: 1.2;
+      opacity: 1;
+    }
 
-.slider input:nth-child(1):checked ~ .buttons label:nth-child(1),
-.slider input:nth-child(2):checked ~ .buttons label:nth-child(2),
-.slider input:nth-child(3):checked ~ .buttons label:nth-child(3)
-{
-    opacity: 1;
-    scroll-margin: 1.2;
-    width: 40px;
-}
+    .slider input:nth-child(1):checked ~ .buttons label:nth-child(1),
+    .slider input:nth-child(2):checked ~ .buttons label:nth-child(2),
+    .slider input:nth-child(3):checked ~ .buttons label:nth-child(3) {
+      opacity: 1;
+      width: 40px;
+    }
 
-.content{
-    position: relative;
-    width: 300vw;
-    display: flex;
-    transition: 400ms ease-in-out;
-}
+    .content {
+      position: relative;
+      width: 300vw;
+      display: flex;
+      transition: 400ms ease-in-out;
+      left: 0;
+    }
 
-.firstslider, .secondslider, .thridslider{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .firstslider,
+    .secondslider,
+    .thridslider {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+    }
 
-.firstslider{
-    background-image: url('/asset/img/pexels-bertoli-31501714.jpg');
-}
+    .firstslider {
+      background-image: url('/asset/img/pexels-bertoli-31501714.jpg');
+    }
 
-.secondslider{
-    background-image: url('/asset/img/pexels-open-borders-31397596.jpg');
-}
+    .secondslider {
+      background-image: url('/asset/img/pexels-open-borders-31397596.jpg');
+    }
 
-.thridslider{
-    background-image: url('/asset/img/pexels-poppy-gitsham-2150777280-31323066.jpg');
-}
+    .thridslider {
+      background-image: url('/asset/img/pexels-poppy-gitsham-2150777280-31323066.jpg');
+    }
 
-.slider input:nth-child(1):checked ~ .content{
-    left: 0;
-}
+    .slider input#slideOne:checked ~ .content {
+      left: 0;
+    }
 
-.slider input:nth-child(2):checked ~ .content{
-    left: -100vw;
-}
+    .slider input#slideTwo:checked ~ .content {
+      left: -100vw;
+    }
 
-.slider input:nth-child(3):checked ~ .content{
-    left: -200vw;
-}
+    .slider input#slideThree:checked ~ .content {
+      left: -200vw;
+    }
 
-.nav-arrows {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    z-index: 2;
-    pointer-events: none;
-}
+    .nav-arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-150%);
+      z-index: 2;
+      pointer-events: none;
+    }
 
-.nav-arrows label {
-    background: rgba(255, 255, 255, 0.2);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    pointer-events: auto;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    transition: 0.3s;
-}
+    .nav-arrows label {
+      background: rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      pointer-events: auto;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      transition: 0.3s;
+    }
 
-.nav-arrows label:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
+    .nav-arrows label:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
 
-.prev::before {
-    content: "❮";
-}
+    .prev::before {
+      content: "❮";
+    }
 
-.next::before {
-    content: "❯";
-}
+    .next::before {
+      content: "❯";
+    }
 
 
-.slider input#slideOne:checked ~ .nav-arrows .prev.slideThree,
-.slider input#slideOne:checked ~ .nav-arrows .next.slideOne,
-.slider input#slideTwo:checked ~ .nav-arrows .prev.slideTwo,
-.slider input#slideTwo:checked ~ .nav-arrows .next.slideTwo,
-.slider input#slideThree:checked ~ .nav-arrows .prev.slideThree,
-.slider input#slideThree:checked ~ .nav-arrows .next.slideThree {
-    display: flex;
-}
+    .slider input#slideOne:checked ~ .nav-arrows .next.slideOne,
+    .slider input#slideTwo:checked ~ .nav-arrows .prev.slideTwo,
+    .slider input#slideTwo:checked ~ .nav-arrows .next.slideTwo,
+    .slider input#slideThree:checked ~ .nav-arrows .prev.slideThree {
+      display: flex;
+    }
 
-.nav-arrows label {
-    display: none;
-}
+
+    .slider input#slideOne:checked ~ .nav-arrows .prev.slideOne {
+      display: flex;
+      pointer-events: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.3);
+      opacity: 0.5;
+    }
+
+
+    .slider input#slideThree:checked ~ .nav-arrows .next.slideThree {
+      display: flex;
+      pointer-events: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.3);
+      opacity: 0.5;
+    }
