@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
-import Hamburger from "../components/Hamburger.astro";
-import Navigation1 from "../components/Navigation1.astro";
+import Header from "../components/Header.astro";
+import '../Style/slider.css'
 const { pageTitle } = Astro.props;
 ---
 
@@ -13,34 +13,57 @@ const { pageTitle } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 		<style>
-			img{
-				width: 100%;
-				display: block;
-				height: 100vh;
+			.blur-load {
+				background-size: cover;
+			},
 
-			}
-			.blur-load{
-				background-size: cover ;
-			}
 		</style>
 	</head>
 	<body>
-		<Hamburger/>
-        <Navigation1/>
+		<Header />
 		<h1>Astro</h1>
-        <h1>{pageTitle}</h1>
+		<h1>{pageTitle}</h1>
 
-        <slot />
+		<slot />
 
-		<div class="blur-load" style="background-image: url(asset/img/img2.jpg);">
-			<img src="asset/img/img3.jpg" alt="logo" loading="lazy" >
+		<div class="container">
+			<div class="slider">
+
+				<input type="radio" name="slider" id="slideOne" checked>
+				<input type="radio" name="slider" id="slideTwo">
+				<input type="radio" name="slider" id="slideThree">
+	
+
+				<div class="nav-arrows">
+					<label for="slideThree" class="prev slideOne"></label>
+					<label for="slideOne" class="prev slideTwo"></label>
+					<label for="slideTwo" class="prev slideThree"></label>
+	
+					<label for="slideTwo" class="next slideOne"></label>
+					<label for="slideThree" class="next slideTwo"></label>
+					<label for="slideOne" class="next slideThree"></label>
+				</div>
+	
+
+				<div class="buttons">
+					<label for="slideOne"></label>
+					<label for="slideTwo"></label>
+					<label for="slideThree"></label>
+				</div>
+	
+
+				<div class="content">
+					<div class="firstslider"></div>
+					<div class="secondslider"></div>
+					<div class="thridslider"></div>
+				</div>
+			</div>
 		</div>
 
-		<Footer/>
+		<Footer />
 
 		<script>
 			import "../scripts/menu.js";
 		</script>
-
 	</body>
 </html>
